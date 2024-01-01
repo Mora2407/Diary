@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <title>Diary</title>
+</head>
+<body>
+    <div class="container">
+        <input type="range" min="1" max="10" value="1" step="1" class="r" id="happiness" onchange="updateLabel(event, this.value)"> <div class="hlabel">1</div>
+        <textarea placeholder="apa aja" class="text"></textarea>
+    </div>
+</body>
+<script type="text/javascript" src="./script.js" defer></script>
+</html>
