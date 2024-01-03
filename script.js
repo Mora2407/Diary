@@ -13,9 +13,11 @@ document.onkeydown = (event) => {
 }
 
 function saveTextAsFile(fileName) {
-    var textToWrite = (Number(document.querySelector(".r").value) % 10).toString() + document.querySelector(".text").value;
-    var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
-    var downloadLink = document.createElement("a");
+    let encoder = new TextEncoder()
+    let textToWrite = encoder.encode((Number(document.querySelector(".r").value) % 10).toString() + document.querySelector(".text").value).join(",");
+    //TextDecoder.decode(new Uint8Array(string.split(",")));
+    let textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+    let downloadLink = document.createElement("a");
     downloadLink.download = fileName;
     downloadLink.innerHTML = "Download File";
     if (window.webkitURL != null) {
